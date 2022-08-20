@@ -338,7 +338,9 @@ main {
 
 .avatar-box {
   background: var(--bg-gradient-onyx);
-  border-radius: 20px;
+}
+img{
+  border-radius:20px ;
 }
 
 .info-content .name {
