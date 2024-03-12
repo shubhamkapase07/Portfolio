@@ -1,7 +1,5 @@
 :root {
-  /**
-   * colors
-   */
+  /* colors */
 
   /* gradient */
 
@@ -53,9 +51,7 @@
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
 
-  /**
-   * typography
-   */
+  /* typography */
 
   /* font-family */
   --ff-poppins: "Poppins", sans-serif;
@@ -76,27 +72,19 @@
   --fw-500: 500;
   --fw-600: 600;
 
-  /**
-   * shadow
-   */
-
+  /* shadow */
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
   --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
   --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
   --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
 
-  /**
-   * transition
-   */
-
+  /* transition */
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
 }
 
-/*-----------------------------------*\
-  #RESET
-\*-----------------------------------*/
+/* #RESET */
 
 *,
 *::before,
@@ -769,9 +757,7 @@ img{
   margin-bottom: 30px;
 }
 
-/**
- * education and experience 
- */
+/* education and experience */
 
 .timeline {
   margin-bottom: 30px;
@@ -837,9 +823,7 @@ img{
   line-height: 1.6;
 }
 
-/**
- * skills 
- */
+/* skills */
 
 .skills-title {
   margin-bottom: 20px;
@@ -879,9 +863,7 @@ img{
   border-radius: inherit;
 }
 
-/*-----------------------------------*\
-  #PORTFOLIO
-\*-----------------------------------*/
+/* PORTFOLIO */
 
 .filter-list {
   display: none;
@@ -1056,9 +1038,7 @@ img{
   font-weight: var(--fw-300);
 }
 
-/*-----------------------------------*\
-  #CONTACT
-\*-----------------------------------*/
+/* CONTACT */
 
 .mapbox {
   position: relative;
@@ -1183,13 +1163,9 @@ textarea.form-input::-webkit-resizer {
   background: var(--bg-gradient-jet);
 }
 
-/*-----------------------------------*\
-  #RESPONSIVE
-\*-----------------------------------*/
+/* RESPONSIVE */
 
-/**
- * responsive larger than 450px screen
- */
+/* responsive larger than 450px screen */
 
 @media (min-width: 450px) {
   /**
