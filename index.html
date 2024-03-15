@@ -105,7 +105,6 @@
           <li class="navbar-item"><button class="navbar-link active" data-nav-link>About</button></li>
           <li class="navbar-item"><button class="navbar-link" data-nav-link>Resume</button></li>
           <li class="navbar-item"><button class="navbar-link" data-nav-link>Portfolio</button></li>
-          <!-- <li class="navbar-item"><button class="navbar-link" data-nav-link>Blog</button></li> -->
           <li class="navbar-item"><button class="navbar-link" data-nav-link>Contact</button></li>
         </ul>
       </nav>
@@ -182,27 +181,7 @@
             </li>
           </ul>
         </section>
-        <!-- testimonials modal -->
-        <div class="modal-container" data-modal-container>
-          <div class="overlay" data-overlay></div>
-          <section class="testimonials-modal">
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./images/avatar-1.png" alt="Deepinder Goyal" width="80" data-modal-img />
-              </figure>
-              <img src="./images/icon-quote.svg" alt="quote icon" />
-            </div>
-            <div class="modal-content">
-              <h4 class="h3 modal-title" data-modal-title>Deepinder Goyall</h4>
-              <time datetime="2021-06-14">14 June, 2021</time>
-              <div data-modal-text>
-              </div>
-            </div>
-          </section>
-        </div>
+
       </article>
       <!-- #RESUME -->
       <article class="resume" data-page="resume">
@@ -533,7 +512,7 @@
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="#" method="POST" class="form" data-form>
+          <form name="submit-to-google-sheet" action="#" method="POST" class="form" data-form>
 
             <div class="input-wrapper">
               <input type="text" name="Name" class="form-input" placeholder="Full name" required data-form-input>
@@ -545,7 +524,7 @@
 
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
+              <span id="msg">Send Message</span>
             </button>
 
           </form>
@@ -554,6 +533,25 @@
       </article>
     </div>
   </main>
+  <!-- Contact Form -->
+  <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyMDdC7ZpxeFlOiFlTP1I-ZlSH3uWDybCoFxrlVaoneAphYPMjXax0u0BTtztFKH-jbzg/exec'
+        const form_ = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+
+        form_.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form_) })
+                .then(response => {
+                    msg.innerHTML = "Thank You We'll Get Back To You Soon"
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    },5000)
+                    form_.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+  </script>
   <!-- custom js link -->
   <script src="./script.js"></script>
   <!-- ion-icon link -->
